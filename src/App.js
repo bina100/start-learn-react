@@ -1,23 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
+import AppHw from './components/appHw';
+import AppDate from './componentDate/appDate';
+import ShopList from './componentLoop/shoopList';
+import AppColor from './componentColor/appColor';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 className='text-danger'></h1>
+      <hr />
+      <AppHw />
+      <hr />
+      <AppDate />
+      <hr />
+      <ShopList />
+      <hr />
+      <AppColor />
+      <hr />
     </div>
   );
 }
