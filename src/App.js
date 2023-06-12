@@ -1,23 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
+import AppBitcoin from './h_m/mission2/appBitcoin';
+import AppGameDice from './h_m/mission3/appGameDice';
+import AppItem from './h_m/mission4/appTv';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h2>Mission2</h2>
+     <AppBitcoin/>
+     <hr/>
+     <AppGameDice/>
+     <hr/>
+     <AppItem/>
+     <hr/>
     </div>
   );
 }
