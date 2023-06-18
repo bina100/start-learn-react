@@ -1,7 +1,10 @@
-import React from 'react'
-
+import React,{useContext} from 'react'
+import { AppContext } from '../context/context'
 export default function Home() {
+  const { number } = useContext(AppContext)
+
   return (
-    <div>home</div>
+    <div>home number: {number}</div>
+
   )
 }

@@ -8,10 +8,10 @@ import {AppContext} from "../context/context"
 import Counter from './counter'
 import VipList from '../component_hm/vipList'
 import AppAtlas from '../component_hm/appAtlas'
-// import AppCasino from '../comps_casino/appCasino'
+import AppCasino from '../component_casino/appCasino'
 
 export default function AppRoutes() {
-  const [number,setNumber] = useState(4);
+  const [number,setNumber] = useState(3);
   const [coins,setCoins] = useState(5);
 
 
@@ -33,7 +33,7 @@ export default function AppRoutes() {
         <Link to="/atlas">Atlas</Link> |
         <Link to="/pixa/cats">Pixa</Link> |
         <Link to="/cars">Cars</Link> |
-        {/* <Link to="/casino">Casino</Link> */}
+        <Link to="/casino">Casino</Link>
       </header>
         {/* outlet */}
         <Routes>
@@ -43,7 +43,7 @@ export default function AppRoutes() {
           <Route path="/vip" element={<VipList />} />
           <Route path="/atlas" element={<AppAtlas />} />
           <Route path="/pixa/:searchQ" element={<AppPixa />} />
-          {/* <Route path="/casino" element={<AppCasino />} /> */}
+          <Route path="/casino" element={<AppCasino />} />
           {/* ?s= */}
           <Route path="/cars" element={<CarsList />} />
         </Routes>
