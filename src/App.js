@@ -1,24 +1,45 @@
-import logo from './logo.svg';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { configureStore } from "@reduxjs/toolkit";
+import { Provider } from "react-redux";
+import About from "./component/About";
+import Form from "./component/Form";
+import Home from "./component/Home";
+import AppEmp from "./component_employee/appEmp";
+import Header from "./component_static/Header";
+import Counter from "./component_redux/counter";
+import counterSlice from "./features/counterSlice";
+import todosSlice from "./features/todoSlice";
+
 import './App.css';
+import AppTodo from "./component_todo_list/appTodo";
+
+const myStore = configureStore({
+  reducer: {
+    counterSlice,
+    todosSlice
+  }
+})
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Provider store={myStore}>
+        <Header />
+        {/* outlet */}
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/employee" element={<AppEmp />} />
+          <Route path="/employee/:company" element={<AppEmp />} />
+          <Route path="/form" element={<Form />} />
+          <Route path="/counter" element={<Counter />} />
+          <Route path="/todos" element={<AppTodo />} />
+
+          <Route path="*" element={<h2>Page 404, not found!</h2>} />
+        </Routes>
+        {/* outlet */}
+      </Provider>
+    </BrowserRouter>
   );
 }
 
